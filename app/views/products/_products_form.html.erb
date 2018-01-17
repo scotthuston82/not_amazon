@@ -25,3 +25,11 @@
   </p>
 
 <% end %>
+
+<% if product.errors.any? %>
+  <ul>
+    <% product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>

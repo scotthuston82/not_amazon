@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
+
   def index
-    @products = Product.all
+    @products = Product.all.order("name")
   end
 
   def show
@@ -20,6 +21,7 @@ class ProductsController < ApplicationController
     @product.img_url = params[:product][:img_url]
 
     if @product.save
+      flash[:notice] = "Successfully created #{@product.name}"
       redirect_to products_url
     else
       render :new
@@ -39,6 +41,7 @@ class ProductsController < ApplicationController
     @product.img_url = params[:product][:img_url]
 
     if @product.save
+      flash[:notice] = "Successfully edited #{@product.name}"
       redirect_to products_url
     else
       render :edit
@@ -48,6 +51,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    flash[:notice] = "Successfully deleted #{@product.name}"
     redirect_to(products_path)
   end
 

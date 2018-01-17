@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @dollars = @product.price_in_dollars
   end
 
   def new

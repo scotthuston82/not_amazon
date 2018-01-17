@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do |i|
+  Product.create(name: "Product #{i}", description: "This is the description #{i}", price: (i*2),img_url: "http://www.thisisasite#{i}.com" )
+end

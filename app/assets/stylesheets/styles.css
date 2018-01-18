@@ -35,3 +35,9 @@ a {
   float: left;
   margin-bottom: 50px;
 }
+
+.products a {
+  padding: 10px;
+  background-color: darkcyan;
+  margin-right: 10px;
+}
